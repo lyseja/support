@@ -21,6 +21,26 @@ p.37 サンプルコード
 5> functions:valid_time({{2019,09,06}, {09,04,43}}).
 ```
 
+p.264 `simple_one_for_one` スーパバイザを使うのコマンドの返り値
+---------------------------------------------------------------
+
+誤）
+
+```erlang
+4> supervisor:terminate_child(band_supervisor, djembe).
+ok
+```
+
+正）
+
+```erlang
+4> supervisor:terminate_child(band_supervisor, djembe).
+{error,simple_one_for_one}
+```
+
+thanks to @K0U_CHANG and @kei_q
+https://twitter.com/K0U_CHANG/status/645282762493001728
+
 p.490 28.9の見出し
 ------------------
 
@@ -36,4 +56,5 @@ p.490 28.9の見出し
 「EUnitをCommon Test内に統合する」
 ```
 
-thx. https://twitter.com/kei_q/status/648510144431558656
+Thanks to @kei_q
+https://twitter.com/kei_q/status/648510144431558656
